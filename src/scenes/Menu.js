@@ -7,6 +7,8 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('OtherWorld', './assets/OtherWorld.wav');
+        this.load.audio('Panic', './assets/Panic.wav');
     }
     create() {
         let menuConfig = {
@@ -46,6 +48,7 @@ class Menu extends Phaser.Scene {
                 gameTimer: 60000
             }
             this.sound.play('sfx_select');
+            this.sound.play('OtherWorld');
             this.scene.start("playScene");
         }
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
@@ -55,6 +58,7 @@ class Menu extends Phaser.Scene {
                 gameTimer: 45000
             }
             this.sound.play('sfx_select');
+            this.sound.play('Panic');
             this.scene.start("playScene");
         }
     }
